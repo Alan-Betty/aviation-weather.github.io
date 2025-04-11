@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aviation Weather Dashboard</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+
+    <!-- Todo List -->
+    <!--todo Make a working contact us page-->
+    <!--todo host this in github-->
+    <!--todo link the pages and get github api-->
+    <!--todo login register using firebase(google, github, facebook, discord, instagram)-->
+    
+    <canvas id="bg"></canvas>
+    <header>
+      <nav class="navbar">
+        <a href="#home" data-index="0">Home</a>
+        <a href="#metar" data-index="1">METAR</a>
+        <a href="#taf" data-index="2">TAF</a>
+        <a href="#notam" data-index="3">NOTAM</a>
+        <a href="#weather" data-index="4">Weather</a>
+        <a href="#contact" data-index="5">Contact Us</a>
+        <a href="#" onclick="logout()">Logout</a>
+        <div class="underline"></div>
+      </nav>
+      <h1>Aviation Weather Dashboard</h1>
+    </header>
+    <main>
+      <!--* Home Section -->
+      <section id="home">
+        <h2>Welcome to the Aviation Weather Dashboard</h2>
+        <p>Your one-stop solution for all aviation weather information.</p>
+        <div class="data-container">
+          
+          <h2>METAR & TAF Lookup</h2>
+          <input type="text" id="icao" placeholder="Enter ICAO code (e.g. KLAX)" />
+          <div class="radio-group">
+            <label class="radio-label">
+              <input type="radio" name="format" value="raw" checked />
+              Raw
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="format" value="decoded" />
+              Decoded
+            </label>
+          </div>          
+          <button onclick="getAviationWeather()">Check Weather</button>
+        
+          <div id="results"></div>
+
+        </div>
+      </section>
+
+
+      <!--!! METAR Section -->
+      <section id="metar">
+        <h2>METAR</h2>
+        <div class="data-container">
+          
+        </div>
+      </section>
+      <!--!! TAF Section -->
+      <section id="taf">
+        <h2>TAF</h2>
+        <div class="data-container">
+          
+        </div>
+      </section>
+      <!--!! NOTAM Section -->
+      <section id="notam">
+        <h2>NOTAM</h2>
+        <div class="data-container">
+          
+        </div>
+      </section>
+      <!-- Other Weather Details Section -->
+      <section id="weather">
+        <h2>Other Weather Details</h2>
+        <div class="data-container">
+          
+        </div>
+      </section>
+
+      <!-- !! Contact Us Section -->
+      <section id="contact">
+        <h2>Contact Us</h2>
+        <p>We'd love to hear from you! Please fill out the form below to get in touch.</p>
+        <form class="contact-form">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" required />
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Your Email" required />
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+            </div>
+            <button type="submit">Send Message</button>
+        </form>
+      </section>
+
+    </main>
+    <footer>
+      <p>&copy; 2025 Aviation Weather</p>
+    </footer>
+
+    <script src="index.js" type="module"></script>
+    <script src="config-file.js"></script>
+    <script src="background.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+  </body>
+</html>
